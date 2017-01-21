@@ -24,15 +24,14 @@ public class GenBuildingAtPoint : MonoBehaviour {
         //First, generate the bottom floor at the position of the spawnPoint
         Instantiate(botFloor, spawnPoint.transform.position,spawnPoint.transform.rotation);
         currentHeight = spawnPoint.transform.position.y;
-        print(spawnPoint.transform.position.y);
+
         for(int i = 0; i < buildingHeight-2; i++)
-       { 
+        { 
             spawnPoint.transform.position = new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y + 1f, spawnPoint.transform.position.z);
             Instantiate(midFloor, spawnPoint.transform.position,spawnPoint.transform.rotation);
-            print(spawnPoint.transform.position.y);
         }
+
         spawnPoint.transform.position = new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y + 1f, spawnPoint.transform.position.z);
-        print(spawnPoint.transform.position.y);
         Instantiate(topFloor, spawnPoint.transform.position, spawnPoint.transform.rotation);
 
     }
