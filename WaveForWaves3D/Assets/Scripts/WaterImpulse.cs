@@ -9,13 +9,19 @@ public class WaterImpulse : MonoBehaviour
 	Vector3 v3;
 	static List<GameObject> affectedWaterCubes;
 	Collider[] objectsInRadius;
+	public GameObject[,] wSurface;
+	[SerializeField]
+	GameObject WSController;
+	int waterWidth=50;
+	int waterLength=50;
 	
 	// Use this for initialization
 	void Start ()
 	{
 		v3 = new Vector3();
 
-		if (affectedWaterCubes == null) {
+		if (affectedWaterCubes == null) 
+		{
 			affectedWaterCubes = new List<GameObject> ();
 			objectsInRadius = Physics.OverlapSphere (new Vector3 (30.8f, 0f, 0f), 4f);
 			foreach (Collider c in objectsInRadius) {
@@ -24,9 +30,15 @@ public class WaterImpulse : MonoBehaviour
 				}
 			}
 
-			GameObject[] waterCubes = GameObject.FindGameObjectsWithTag ("WaterCube");
-			foreach (GameObject g in waterCubes) {
-				Destroy (g.GetComponent<BoxCollider> ());
+			for (int i = 0; i < waterWidth; i++) 
+			{
+				for (int j = 0; j < waterLength; j++) 
+				{
+					if (!((j > 34) && (j < 47))) 
+					{
+						Destroy (WSController.GetComponent<WaterSurfaceController> ().waterSurface [i, j].GetComponent<Collider> ());
+					}
+				}
 			}
 		}
 

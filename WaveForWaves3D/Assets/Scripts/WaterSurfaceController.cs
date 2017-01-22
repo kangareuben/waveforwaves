@@ -6,7 +6,7 @@ public class WaterSurfaceController : MonoBehaviour
     public GameObject waterCube;
     public int waterWidth = 50;
     public int waterLength = 50;
-    GameObject[,] waterSurface;
+    public GameObject[,] waterSurface;
     GameObject tempCube;
     SpringJoint tempspring;
 
