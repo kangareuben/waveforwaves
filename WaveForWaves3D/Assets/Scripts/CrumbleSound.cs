@@ -20,7 +20,7 @@ public class CrumbleSound : MonoBehaviour {
 	{
 		while (true) 
 		{
-			if ((iscrumbling) && (this.GetComponents<AudioSource> () [1].volume < 0.2f)) 
+			if ((iscrumbling) && (this.GetComponents<AudioSource> () [1].volume < 0.3f)) 
 			{
 				this.GetComponents<AudioSource> () [1].volume += 0.05f;
 			} 

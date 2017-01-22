@@ -22,9 +22,9 @@ public class WaterSurfaceController : MonoBehaviour
 				waterSurface[i, j].transform.position = new Vector3(i * 1.1f, 0f, j * 1.1f);
                 if ( i > 0 && j > 0)
                 {
-                    tempspring = waterSurface[i, j].AddComponent<SpringJoint>();
-                    tempspring.connectedBody = waterSurface[i - 1, j - 1].GetComponent<Rigidbody>();
-                    tempspring.damper = 0f;
+                    //tempspring = waterSurface[i, j].AddComponent<SpringJoint>();
+                    //tempspring.connectedBody = waterSurface[i - 1, j - 1].GetComponent<Rigidbody>();
+                    //tempspring.damper = 0f;
 
                     tempspring = waterSurface[i, j].AddComponent<SpringJoint>();
                     tempspring.connectedBody = waterSurface[i, j - 1].GetComponent<Rigidbody>();
