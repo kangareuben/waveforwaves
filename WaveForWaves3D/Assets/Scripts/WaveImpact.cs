@@ -9,12 +9,14 @@ public class WaveImpact : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+    {
+	    
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
-		this.GetComponent<Rigidbody> ().AddExplosionForce (1000f, this.transform.position, 10f);
+        ScoreManager.score += Random.Range(800, 1200);
+        this.GetComponent<Rigidbody> ().AddExplosionForce (1000f, this.transform.position, 10f);
 	}
 }

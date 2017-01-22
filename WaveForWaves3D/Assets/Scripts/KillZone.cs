@@ -15,6 +15,7 @@ public class KillZone : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		Destroy (other.gameObject);
+        ScoreManager.score += Random.Range(400, 600);
+        Destroy (other.gameObject);
 	}
 }
